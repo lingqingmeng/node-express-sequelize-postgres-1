@@ -1,12 +1,14 @@
 # Node.js Rest APIs with Express, Sequelize & MySQL example
 
 
-## Project setup
-```
+## Install dependencies
+
+```zsh
 npm install
 ```
 
-### Run
-```
-node server.js
+## Usage
+
+```bash
+node server.js -U 'me' -p 'password'
 ```

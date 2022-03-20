@@ -1,8 +1,13 @@
-module.exports = {
+"use strict";
+
+const Parser = require("../parser");
+let parser = new Parser(process.argv);
+
+let dbConfig = {
   HOST: "localhost",
-  USER: "<redacted>",
-  PASSWORD: "<redacted>",
-  DB: "webhook",
+  USER: parser.getPgUser(),
+  PASSWORD: parser.getPgPassword(),
+  DB: "hook",
   dialect: "postgres",
   pool: {
     max: 5,
@@ -11,3 +16,4 @@ module.exports = {
     idle: 10000
   }
 };
+module.exports = dbConfig;
