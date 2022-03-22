@@ -25,10 +25,13 @@ app.use(express.urlencoded({ extended: true }));   /* bodyParser.urlencoded() is
 
 // <<<<<<<<<<<<<<<<<<<<
 app.oauth = new OAuth2Server({
-  model: require('./model.js'),
+  model: require('./model/token.js'),
   accessTokenLifetime: 60 * 60,
   allowBearerTokensInQueryString: true
 }); // this may need bodyParser
+app.all('/oauth/token', obtainToken);
+
+
 const db = require("./app/models");
 
 db.sequelize.sync();
@@ -40,6 +43,12 @@ db.sequelize.sync();
 // simple route
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to the Decentral tutorial application." });
+});
+
+
+
+app.get('/api/', authenticateRequest, function(req, res) {
+  res.send('Congratulations, you are in a secret area!');
 });
 
 require("./app/routes/turorial.routes")(app);
