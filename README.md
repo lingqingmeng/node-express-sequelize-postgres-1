@@ -35,3 +35,27 @@ Sequelize.STRING(1234)                // VARCHAR(1234)
 Sequelize.STRING.BINARY               // VARCHAR BINARY
 ```
 
+
+# Common Commands
+
+
+#### Show tables in database
+
+```sql
+\dt
+```
+
+#### Delete table in SQL
+
+```sql
+DROP TABLE <table_name>
+```
+
+
+#### Delete DB in sql
+
+Angle brackets are simply templating
+
+```sql
+DROP DATABASE <db_name>;
+```
