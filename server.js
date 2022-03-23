@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser"); 
 const OAuth2Server = require('oauth2-server');
-const Request = OAuth2Server.Request,
+const Request = OAuth2Server.Request;
 const Response = OAuth2Server.Response;
 const cors = require("cors");
 
@@ -24,12 +24,12 @@ app.use(express.urlencoded({ extended: true }));   /* bodyParser.urlencoded() is
 // app.use(bodyParser.json());
 
 // <<<<<<<<<<<<<<<<<<<<
-app.oauth = new OAuth2Server({
-  model: require('./model/token.js'),
-  accessTokenLifetime: 60 * 60,
-  allowBearerTokensInQueryString: true
-}); // this may need bodyParser
-app.all('/oauth/token', obtainToken);
+// app.oauth = new OAuth2Server({
+//   model: require('./app/models/token.js'),
+//   accessTokenLifetime: 60 * 60,
+//   allowBearerTokensInQueryString: true
+// }); // this may need bodyParser
+// app.all('/oauth/token', obtainToken);
 
 
 const db = require("./app/models");

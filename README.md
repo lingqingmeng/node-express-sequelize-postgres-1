@@ -1,19 +1,7 @@
 # Node.js Rest APIs with Express, Sequelize & MySQL example
 
-## Progress
+First make sure to use the the versions pg `"8.4.2"` sequelize `"6.3.5"`
 
-#### 1. Work Items
-
-- [ ] Create middleware.
-- [ ] Create user model.
-
-#### 2. Staging Items
-
-- [ ] Test authentication logic
-
-#### 3. Production Items
-
-- [ ] Harden security
 
 ## Install dependencies
 
@@ -26,3 +14,24 @@ npm install
 ```bash
 node server.js -U 'me' -p 'password'
 ```
+
+## Pre-Reqs
+
+Migrations for table are not included
+
+```sql
+CREATE TABLE tutorial (
+  title VARCHAR(255),
+  description VARCHAR(255),
+  published boolean
+);
+```
+
+Why we do VarChar 255? See below.
+
+```js
+Sequelize.STRING                      // VARCHAR(255)
+Sequelize.STRING(1234)                // VARCHAR(1234)
+Sequelize.STRING.BINARY               // VARCHAR BINARY
+```
+

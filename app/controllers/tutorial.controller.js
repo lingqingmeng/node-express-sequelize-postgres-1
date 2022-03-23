@@ -20,6 +20,7 @@ exports.create = (req, res) => {
   };
 
   // Save Tutorial in the database
+  console.log("tutorial: ",tutorial);
   Tutorial.create(tutorial)
     .then(data => {
       res.send(data);
