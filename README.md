@@ -25,7 +25,7 @@ Expect to do the required tasks
 
 1. Modify the `pg_hba.conf` file and add an entry for the following
 2. Start msc.services as an admin in Win10, to do that you'll have to hit Windows button then type `services.msc` then right click start as administrator 
-
+3. Every time you modify a config in `pg_hba.conf` you're expected to restart the postgres service for changes to take effect
 
 Documentation on auth methods
 
