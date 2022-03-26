@@ -26,6 +26,25 @@ Expect to do the required tasks
 1. Modify the `pg_hba.conf` file and add an entry for the following
 2. Start msc.services as an admin in Win10, to do that you'll have to hit Windows button then type `services.msc` then right click start as administrator 
 
+
+Documentation on auth methods
+
+> trust
+> Allow the connection unconditionally. This method allows anyone that can connect to the PostgreSQL database server to login as any PostgreSQL user they wish, without the need for a password or any other authentication. See Section 20.4 for details.
+
+> md5
+> Perform SCRAM-SHA-256 or MD5 authentication to verify the user's password. See Section 20.5 for details.
+
+> password
+> Require the client to supply an unencrypted password for authentication. Since the password is sent in clear text over the network, this should not be used on untrusted networks. See Section 20.5 for details.
+
+
+#### Optionally
+
+You may have to 
+
+1. Check the `postgresql.conf` file to 
+
 #### Content
 
 
