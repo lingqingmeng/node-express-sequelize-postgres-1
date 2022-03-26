@@ -32,6 +32,9 @@ Documentation on auth methods
 > trust  
 > Allow the connection unconditionally. This method allows anyone that can connect to the PostgreSQL database server to login as any PostgreSQL user they wish, without the need for a password or any other authentication. See Section 20.4 for details.
 
+> cert
+> This authentication method uses SSL client certificates to perform authentication. It is therefore only available for SSL connections. When using this authentication method, the server will require that the client provide a valid, trusted certificate. No password prompt will be sent to the client. The cn (Common Name) attribute of the certificate will be compared to the requested database user name, and if they match the login will be allowed. User name mapping can be used to allow cn to be different from the database user name.
+
 > md5  
 > Perform SCRAM-SHA-256 or MD5 authentication to verify the user's password. See Section 20.5 for details.
 
