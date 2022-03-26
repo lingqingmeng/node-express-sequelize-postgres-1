@@ -29,13 +29,13 @@ Expect to do the required tasks
 
 Documentation on auth methods
 
-> trust
+> trust  
 > Allow the connection unconditionally. This method allows anyone that can connect to the PostgreSQL database server to login as any PostgreSQL user they wish, without the need for a password or any other authentication. See Section 20.4 for details.
 
-> md5
+> md5  
 > Perform SCRAM-SHA-256 or MD5 authentication to verify the user's password. See Section 20.5 for details.
 
-> password
+> password  
 > Require the client to supply an unencrypted password for authentication. Since the password is sent in clear text over the network, this should not be used on untrusted networks. See Section 20.5 for details.
 
 
